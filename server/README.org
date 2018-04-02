@@ -1,5 +1,5 @@
 #+TITLE: CVE-2017-5638
-Attack container and exploit
+This repository contains a vulnerable Apache Struts server
 
 * Build container
   #+begin_src python :results output
@@ -22,7 +22,7 @@ docker inspect 8d1de3d1b...
 "IPAddress": "172.17.0.6",
   #+end_src
 
-  Then run the exploit against the IP address
+  Then run the exploit against the IP address, e.g., whoami, followed by commands to install and load the rootkit.
   #+begin_src python :results output
 % make exploit TARGET_IP=<IP address>
 
