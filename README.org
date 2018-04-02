@@ -1,0 +1,4 @@
+This repository contains the attack scenario A1 described in our Oakland submission.
+
+Instructions for setting up a vulnerable server, running exploits, setting up rootkits,
+and installing monitors are included in the README file in each folder.
