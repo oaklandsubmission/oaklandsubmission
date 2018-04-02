@@ -1,0 +1,22 @@
+filebeat:
+ prospectors:
+  - input_type: log
+    paths:
+     - "/var/log/osquery/osqueryd.results.log"
+    document_type: osqueryd-results
+    json.message_key: log
+    json.keys_under_root: true
+    json.overwrite_keys: true
+  - input_type: log
+    paths:
+     - "/opt/bro/logs/current/notice.log"
+    document_type: osqueryd-results
+    json.message_key: log
+    json.keys_under_root: true
+    json.overwrite_keys: true
+
+output:
+ redis:
+  hosts: ["localhost"]
+  key: "filebeat"
+  datatype: "channel"

