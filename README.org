@@ -1,4 +1,10 @@
+* Overview
 This repository contains the attack scenario A1 described in our Oakland submission.
 
+* Instructions
 Instructions for setting up a vulnerable server, running exploits, setting up rootkits,
 and installing monitors are included in the README file in each folder.
+
+* Anonymity statement
+This scenario uses some open-source components, e.g., the Apache Struts exploits, with proper citations in each folder.
+The authors do not have any relationship with people who released such open-source components and as such, maintain the author's anonymity on this supplemential material of the Oakland submission.

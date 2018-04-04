@@ -1,5 +1,5 @@
 // A netfilter kernel module to intercept TCP packets
-// Parts of the code are adapted from Garret Kelly
+// Parts of the code are adapted from https://github.com/gkelly
 #include <linux/module.h>
 #include <linux/printk.h>
 #include <linux/sched.h>
